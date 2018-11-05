@@ -1,5 +1,5 @@
 # Python script using Flask.
-# to control the functionality of the Website.
+# Control the functionality of the Website.
 
 from flask import Flask, render_template, request, redirect, session
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user

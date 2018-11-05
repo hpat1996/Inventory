@@ -74,7 +74,7 @@ cur.execute("Create Table Users(" +
 conn.commit()
 
 
-cur.execute("Insert into Users VALUES ('admin', 'UWHLadmin_123', 'ADMINISTRATOR');");
+cur.execute("Insert into Users VALUES ('admin', 'admin_123', 'ADMINISTRATOR');");
 conn.commit()
 
 # Prints a success message
