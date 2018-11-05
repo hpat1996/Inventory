@@ -55,7 +55,7 @@ pyOpenSSL==0.13.1
 pyparsing==2.0.1
 python-dateutil==2.7.3
 pytz==2018.5
-requests==2.13.0
+requests==2.20.0
 scikit-learn==0.20.0
 scipy==1.1.0
 singledispatch==3.4.0.3
@@ -66,3 +66,4 @@ Werkzeug==0.14.1
 xattr==0.6.4
 xlrd==1.1.0
 zope.interface==4.1.1
+pyopenssl>=17.5.0
