@@ -11,13 +11,9 @@ Items can be searched by their name, ID or the tags used while adding them.
 Items can be used using the ID assigned to the item.
 
 To get started with the app clone the repo and run: 
-
 python init.pyi
+(make sure you have pip installed)
 
-(Make sure you have pip installed.)
-
-Deafult login:
-
+Default login:
 admin
-
 admin_123
