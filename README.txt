@@ -15,7 +15,7 @@ python init.py
 (make sure you have pip installed)
 
 Then run:
-pyhton main.py
+python main.py
 
 Default login:
 admin
