@@ -14,6 +14,9 @@ To get started with the app clone the repo and run:
 python init.pyi
 (make sure you have pip installed)
 
+Then run:
+pyhton main.py
+
 Default login:
 admin
 admin_123
