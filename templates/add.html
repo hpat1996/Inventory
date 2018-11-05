@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hyperloop Inventory </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    
+    
+    <body>
+        <p> User: {{ user }}</p>
+        <p><a href = "/logout"> Logout </a></p>
+        <h1><a href="/"> HOME<br><hr></a></h1>
+        {% if task == 0 %}
+        <li><a href="{{ url_for('add', task=1) }}"> Add a new item<br><hr></a></li>
+        <li><a href="{{ url_for('add', task=2) }}"> Add an existing item<br><hr></a></li>
+        {% endif %}
+        {% if task == 1 %}
+        <form action="/add/1" method="POST">
+            <label>Enter the name of the item you want to add :</label> 
+            <input type="text" name="get_name" required="required"><br>
+            <label>Enter the no. of units of the item to add :</label>
+            <input type="text" name="get_units" required="required" pattern="[0-9]*"><br>
+            <label>Enter a description of the item :</label>
+            <input type="text" name="get_descp" required="required" style="width: 500pt"><br>
+            <label>Enter the tags for the item (comma separated) :</label>
+            <input type="text" name="get_tags" required="required" style="width: 500pt"><br>
+            <label> </label><input type="submit" name="Submit" value="Add">
+            <h1><hr></h1>
+        </form>
+        {% elif task == 2 %}
+        <form action="/add/2" method="POST">
+            <label>Enter the ID of the item you want to add :</label> 
+            <input type="text" name="get_id" required="required" pattern="[0-9]*"><br>
+            <label>Enter the no. of units of the item to add :</label>
+            <input type="text" name="get_units" required="required" pattern="[0-9]*"><br>
+            <label> </label><input type="submit" name="Submit" value="Add">
+            <h1><hr></h1>
+        </form>
+        {% endif %}
+
+        {% if result != 0 %}
+            <h3> {{ display }} <br></h3>
+        {% endif %}
+        
+        <h2> Stock </h2>
+        <table>
+            <col width="100">
+            <col width="300">
+            <col width="150">
+            <col width="150">
+            <col width="500">
+            <col width='150'>
+            <tr>
+                <th> ID</th>
+                <th> Tech Name</th>
+                <th> Units Used</th>
+                <th> Units Available</th>
+                <th> Description</th>
+                <th> Last updated</th>
+            </tr>
+            {% for row in stockRslt %}
+            <tr>
+                {%for col in row %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        
+    </body>
+</html>

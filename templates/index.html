@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hyperloop Inventory </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    
+    
+    <body>
+        <p> User: {{ user }}</p>
+        <p><a href = "/logout"> Logout </a></p>
+        <h1><a href="/"> HOME<br><hr></a></h1>
+        
+        <div class="Menu">
+        <li><a href="{{ url_for('search') }}"> Search for an item<br><hr></a></li>
+        <li><a href="{{ url_for('add', task=0) }}"> Add an item<br><hr></a></li>
+        <li><a href="{{ url_for('remove') }}"> Use an item<br><hr></a></li>
+        <li><a href="{{ url_for('adduser') }}"> Add a new user<br><hr></a></li>
+        </div>
+    </body>
+</html>
+        

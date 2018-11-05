@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hyperloop Inventory </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <h1><a href="/"> Login<br><hr></a></h1>
+
+    <div class="login">
+         <form action="/login" method="POST">
+            <input type="text" name="get_un" placeholder="username" style="font-size: 12pt"><br>
+            <input type="password" name="get_pswd" placeholder="password" style="font-size: 12pt"><br>
+            <input type="submit" value="Login" style="font-size: 12pt">
+        </form>
+    </div>
+
+    {% if msg != '' %}
+      <p> {{ msg }} </p>
+    {% endif %}
+
+</html>

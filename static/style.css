@@ -1,0 +1,49 @@
+body { 
+    background-color: rgb(148,0,211);
+    font-family: 'Verdana' ;
+    font-size: 16pt;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    text-align: none; 
+}
+
+h1 {
+    color: white;
+    text-decoration: none;
+    text-align: center; 
+}
+
+p {
+    color: white;
+    font-size: 12pt;
+    text-decoration: none;
+    text-align: none; 
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid white;
+    font-size: 12pt;
+    text-decoration: none;
+}
+
+div.login {
+    text-align: center;
+}
+
+label {
+    display:inline-block;
+    width:350pt;
+}
+
+form {
+    font-size: 14pt;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hyperloop Inventory </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    
+    
+    <body>
+        <p> User: {{ user }}</p>
+        <p><a href = "/logout"> Logout </a></p>
+        <h1><a href="/"> HOME<br><hr></a></h1>
+        <form action="/search" method="POST">
+            Tech name / ID / Tag :
+            <input type="text" name="searchString" style="font-size: 12pt">
+            <input type="submit" name="Submit" value="Search all" style="font-size: 12pt">
+            <h1><hr></h1>
+        </form>
+
+        {% if search != '' %}
+            <h3> Results for "{{ search }}" : <br></h3>
+        {% endif %}
+
+        <h2> Stock </h2>
+        <table>
+            <col width="100">
+            <col width="300">
+            <col width="150">
+            <col width="150">
+            <col width="500">
+            <col width='150'>
+            <tr>
+                <th> ID</th>
+                <th> Tech Name</th>
+                <th> Units Used</th>
+                <th> Units Available</th>
+                <th> Description</th>
+                <th> Last updated</th>
+            </tr>
+            {% for row in stockRslt %}
+            <tr>
+                {%for col in row %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <h2> In Use </h2>
+        <table>
+            <col width="100">
+            <col width="300">
+            <col width="150">
+            <col width="650">
+            <col width="150">
+            <tr>
+                <th> ID</th>
+                <th> Tech Name</th>
+                <th> Units Used</th>
+                <th> Used In</th>
+                <th> Used By</th>
+            </tr>
+            {% for row in useRslt %}
+            <tr>
+                {% for col in row %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </body>
+</html>
